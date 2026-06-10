@@ -1,0 +1,85 @@
+
+> wayfinder-travel-api@0.1.0 start
+> node src/server.js
+
+Wayfinder Travel API listening on http://localhost:8787
+  REST API: http://localhost:8787/api
+  MCP server: http://localhost:8787/mcp
+  Discovery: http://localhost:8787/.well-known/oauth-protected-resource
+GET /api/locations
+GET /api/locations
+GET /api/locations
+GET /api/locations
+GET /api/locations
+GET /api/locations
+GET /api/bookings/flights | type: user | client_id: WAYFINDER | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | aud: http://localhost:8787/mcp,wayfinder-agent | scope: openid profile email agent:access booking:cancel booking:create booking:read
+POST /mcp | type: m2m | client_id: WAYFINDER-CONCIERGE | sub: wayfinder-concierge | aud: http://localhost:8787/mcp | scope: upgrade:search booking:recommend
+POST /mcp | type: m2m | client_id: WAYFINDER-CONCIERGE | sub: wayfinder-concierge | aud: http://localhost:8787/mcp | scope: upgrade:search booking:recommend
+GET /mcp | type: m2m | client_id: WAYFINDER-CONCIERGE | sub: wayfinder-concierge | aud: http://localhost:8787/mcp | scope: upgrade:search booking:recommend
+POST /mcp | type: m2m | client_id: WAYFINDER-CONCIERGE | sub: wayfinder-concierge | aud: http://localhost:8787/mcp | scope: upgrade:search booking:recommend
+POST /mcp | type: m2m | client_id: WAYFINDER-CONCIERGE | sub: wayfinder-concierge | aud: http://localhost:8787/mcp | scope: upgrade:search booking:recommend
+  → TOOL search_flights | caller: m2m:wayfinder-concierge | scope: upgrade:search booking:recommend | args: {"from":"Colombo","to":"Dubai"}
+GET /api/locations
+GET /api/locations
+GET /api/locations
+GET /api/locations
+GET /api/locations
+GET /api/locations
+POST /mcp | type: user | client_id: WAYFINDER-CONCIERGE | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | act: wayfinder-concierge | aud: http://localhost:8787/mcp | scope: booking:create booking:read booking:upgrade booking:cancel
+POST /mcp | type: user | client_id: WAYFINDER-CONCIERGE | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | act: wayfinder-concierge | aud: http://localhost:8787/mcp | scope: booking:create booking:read booking:upgrade booking:cancel
+GET /mcp | type: user | client_id: WAYFINDER-CONCIERGE | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | act: wayfinder-concierge | aud: http://localhost:8787/mcp | scope: booking:create booking:read booking:upgrade booking:cancel
+POST /mcp | type: user | client_id: WAYFINDER-CONCIERGE | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | act: wayfinder-concierge | aud: http://localhost:8787/mcp | scope: booking:create booking:read booking:upgrade booking:cancel
+POST /mcp | type: user | client_id: WAYFINDER-CONCIERGE | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | act: wayfinder-concierge | aud: http://localhost:8787/mcp | scope: booking:create booking:read booking:upgrade booking:cancel
+  → TOOL create_booking | caller: user:019eb0da-c349-716e-8d04-0d592f35f3a4 (on-behalf-of agent wayfinder-concierge) | scope: booking:create booking:read booking:upgrade booking:cancel | args: {"type":"flight","itemId":"flight-cmb-dxb-01"}
+POST /mcp | type: m2m | client_id: WAYFINDER-CONCIERGE | sub: wayfinder-concierge | aud: http://localhost:8787/mcp | scope: upgrade:search booking:recommend
+  → TOOL find_upgrade_options | caller: m2m:wayfinder-concierge | scope: upgrade:search booking:recommend | args: {"bookingId":"booking-da128661-e30e-41ee-8bcc-f86333a70e62"}
+POST /mcp | type: user | client_id: WAYFINDER-CONCIERGE | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | act: wayfinder-concierge | aud: http://localhost:8787/mcp | scope: booking:create booking:read booking:upgrade booking:cancel
+  → TOOL request_upgrade | caller: user:019eb0da-c349-716e-8d04-0d592f35f3a4 (on-behalf-of agent wayfinder-concierge) | scope: booking:create booking:read booking:upgrade booking:cancel | args: {"bookingId":"booking-da128661-e30e-41ee-8bcc-f86333a70e62"}
+POST /api/demo/unlock-business-class
+POST /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+POST /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+GET /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+POST /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+POST /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+  → TOOL get_pending_upgrade | caller: m2m:wayfinder-upgrade-agent | scope: upgrade:read upgrade:search | args: {}
+POST /api/demo/unlock-business-class
+POST /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+POST /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+GET /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+POST /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+POST /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+  → TOOL get_pending_upgrade | caller: m2m:wayfinder-upgrade-agent | scope: upgrade:read upgrade:search | args: {}
+POST /api/demo/unlock-business-class
+POST /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+POST /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+GET /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+POST /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+POST /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+  → TOOL get_pending_upgrade | caller: m2m:wayfinder-upgrade-agent | scope: upgrade:read upgrade:search | args: {}
+GET /api/locations
+GET /api/locations
+GET /api/locations
+GET /api/locations
+GET /api/locations
+GET /api/locations
+GET /api/bookings/flights | type: user | client_id: WAYFINDER | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | aud: http://localhost:8787/mcp,wayfinder-agent | scope: openid profile email agent:access booking:cancel booking:create booking:read
+POST /api/demo/unlock-business-class
+POST /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+POST /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+GET /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+POST /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+POST /mcp | type: m2m | client_id: WAYFINDER-UPGRADE-AGENT | sub: wayfinder-upgrade-agent | aud: http://localhost:8787/mcp | scope: upgrade:read upgrade:search
+  → TOOL get_pending_upgrade | caller: m2m:wayfinder-upgrade-agent | scope: upgrade:read upgrade:search | args: {}
+POST /mcp | type: user | client_id: WAYFINDER-UPGRADE-AGENT | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | aud: WAYFINDER-UPGRADE-AGENT | scope: openid upgrade:process
+POST /mcp | type: user | client_id: WAYFINDER-UPGRADE-AGENT | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | aud: WAYFINDER-UPGRADE-AGENT | scope: openid upgrade:process
+GET /mcp | type: user | client_id: WAYFINDER-UPGRADE-AGENT | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | aud: WAYFINDER-UPGRADE-AGENT | scope: openid upgrade:process
+POST /mcp | type: user | client_id: WAYFINDER-UPGRADE-AGENT | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | aud: WAYFINDER-UPGRADE-AGENT | scope: openid upgrade:process
+POST /mcp | type: user | client_id: WAYFINDER-UPGRADE-AGENT | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | aud: WAYFINDER-UPGRADE-AGENT | scope: openid upgrade:process
+  → TOOL process_upgrade | caller: user:019eb0da-c349-716e-8d04-0d592f35f3a4 | scope: openid upgrade:process | args: {"upgradeRequestId":"upgrade-d038b5b5-614d-4383-bb9e-e1056169e6b1"}
+GET /api/locations
+GET /api/locations
+GET /api/locations
+GET /api/locations
+GET /api/locations
+GET /api/locations
+GET /api/bookings/flights | type: user | client_id: WAYFINDER | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | aud: http://localhost:8787/mcp,wayfinder-agent | scope: openid profile email agent:access booking:cancel booking:create booking:read

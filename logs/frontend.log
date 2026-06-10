@@ -1,0 +1,9 @@
+
+> thunderid-wayfinder-sample@0.1.0 dev
+> vite --host 0.0.0.0
+
+
+  VITE v6.4.2  ready in 320 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://10.159.116.23:5173/

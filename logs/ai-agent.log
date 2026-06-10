@@ -1,0 +1,59 @@
+
+> ai-agent@1.0.0 start
+> tsx agent.ts
+
+##########################################################################################################
+##      This is an Agent Authentication Flow sample application for authenticating AI agents            ##
+##                         using Asgardeo and LangChain framework                                       ##
+##########################################################################################################
+[ai-agent] LLM provider: anthropic
+[ai-agent] M2M token acquired (expires in 3599s)
+[ai-agent] MCP client connected (14 tools)
+AI agent API server is running at http://localhost:8790
+Chat endpoint: POST http://localhost:8790/chat
+Consent endpoint: POST http://localhost:8790/chat/consent
+Health check: GET http://localhost:8790/health
+POST /chat | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | aud: http://localhost:8787/mcp,wayfinder-agent | scope: openid profile email agent:access booking:cancel booking:create booking:read
+CHAT | session: new | preview: chec flights colombo to dubai
+POST /chat | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | aud: http://localhost:8787/mcp,wayfinder-agent | scope: openid profile email agent:access booking:cancel booking:create booking:read
+CHAT | session: 35ba8ccb-47cc-4cb3-8e6e-a65698ff0710 | preview: book this
+[obo] create_booking → consent required (scope=booking:read booking:create booking:cancel booking:upgrade)
+[obo] create_booking → consent already pending, reusing
+Token exchange failed: Error: Token exchange failed (400): {"error":"invalid_grant","error_description":"Invalid authorization code"}
+
+    at exchangeCodeForUserToken (/Users/dilusham/dfz/thunder_dist/sample-app-wayfinder-0.43.0-macos-arm64/ai-agent/agent.ts:326:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async handleConsent (/Users/dilusham/dfz/thunder_dist/sample-app-wayfinder-0.43.0-macos-arm64/ai-agent/agent.ts:928:27)
+    at async Server.<anonymous> (/Users/dilusham/dfz/thunder_dist/sample-app-wayfinder-0.43.0-macos-arm64/ai-agent/agent.ts:1170:17)
+[obo] user token claims: {"sub":"019eb0da-c349-716e-8d04-0d592f35f3a4","act":{"sub":"wayfinder-concierge"},"scope":"booking:create booking:read booking:upgrade booking:cancel","aud":"http://localhost:8787/mcp"}
+POST /chat | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | aud: http://localhost:8787/mcp,wayfinder-agent | scope: openid profile email agent:access booking:cancel booking:create booking:read
+CHAT | session: 35ba8ccb-47cc-4cb3-8e6e-a65698ff0710 | preview: book this
+[obo] create_booking → reusing cached user token
+POST /chat | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | aud: http://localhost:8787/mcp,wayfinder-agent | scope: openid profile email agent:access booking:cancel booking:create booking:read
+CHAT | session: 35ba8ccb-47cc-4cb3-8e6e-a65698ff0710 | preview: can you upgrade it
+POST /chat | sub: 019eb0da-c349-716e-8d04-0d592f35f3a4 | aud: http://localhost:8787/mcp,wayfinder-agent | scope: openid profile email agent:access booking:cancel booking:create booking:read
+CHAT | session: 35ba8ccb-47cc-4cb3-8e6e-a65698ff0710 | preview: yes
+[obo] request_upgrade → reusing cached user token
+[upgrade-scheduler] M2M token acquired (expires in 3599s)
+[upgrade-scheduler] Found 1 pending upgrade(s). Processing: upgrade-d038b5b5-614d-4383-bb9e-e1056169e6b1 for user: dilusham@wso2.com
+[upgrade-scheduler] CIBA initiation failed for dilusham@wso2.com: Error: CIBA bc-authorize failed (500): {"error":"server_error","error_description":"Failed to process backchannel authentication request"}
+
+    at initiateCiba (/Users/dilusham/dfz/thunder_dist/sample-app-wayfinder-0.43.0-macos-arm64/ai-agent/agent.ts:386:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async processOneUpgrade (/Users/dilusham/dfz/thunder_dist/sample-app-wayfinder-0.43.0-macos-arm64/ai-agent/agent.ts:1023:30)
+[upgrade-scheduler] Found 1 pending upgrade(s). Processing: upgrade-d038b5b5-614d-4383-bb9e-e1056169e6b1 for user: dilusham@wso2.com
+[upgrade-scheduler] CIBA initiation failed for dilusham@wso2.com: Error: CIBA bc-authorize failed (500): {"error":"server_error","error_description":"Failed to process backchannel authentication request"}
+
+    at initiateCiba (/Users/dilusham/dfz/thunder_dist/sample-app-wayfinder-0.43.0-macos-arm64/ai-agent/agent.ts:386:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async processOneUpgrade (/Users/dilusham/dfz/thunder_dist/sample-app-wayfinder-0.43.0-macos-arm64/ai-agent/agent.ts:1023:30)
+[upgrade-scheduler] Found 1 pending upgrade(s). Processing: upgrade-d038b5b5-614d-4383-bb9e-e1056169e6b1 for user: dilusham@wso2.com
+[upgrade-scheduler] CIBA initiation failed for dilusham@wso2.com: Error: CIBA bc-authorize failed (500): {"error":"server_error","error_description":"Failed to process backchannel authentication request"}
+
+    at initiateCiba (/Users/dilusham/dfz/thunder_dist/sample-app-wayfinder-0.43.0-macos-arm64/ai-agent/agent.ts:386:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async processOneUpgrade (/Users/dilusham/dfz/thunder_dist/sample-app-wayfinder-0.43.0-macos-arm64/ai-agent/agent.ts:1023:30)
+[upgrade-scheduler] Found 1 pending upgrade(s). Processing: upgrade-d038b5b5-614d-4383-bb9e-e1056169e6b1 for user: dilusham@wso2.com
+[upgrade-scheduler] CIBA initiated for dilusham@wso2.com | auth_req_id: 019eb0e7-1937-786f-aafe-3444b3c956e6
+[upgrade-scheduler] CIBA approved for dilusham@wso2.com
+[upgrade-scheduler] Upgrade upgrade-d038b5b5-614d-4383-bb9e-e1056169e6b1 processed successfully: ["{\n  \"upgradeRequestId\": \"upgrade-d038b5b5-614d-4383-bb9e-e1056169e6b1\",\n  \"status\": \"success\",\n  \"bookingId\": \"booking-da128661-e30e-41ee-8bcc-f86333a70e62\",\n  \"newFlightId\": \"fli
