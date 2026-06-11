@@ -49,7 +49,7 @@ Once all three services are running, open [http://localhost:5173](http://localho
 - A real **email address** you can receive messages on (for the CIBA notification)
 - An **LLM API key** — Anthropic Claude or Google Gemini
 
-> **SMS in the sample environment:** Instead of a real mobile number, SMS notifications are routed to a webhook. You can view them at [webhook.site](https://webhook.site/#!/view/bc82f64f-49aa-40af-8986-c7b572c87e7f/a1a50a01-9b3b-41ab-8df3-98eae3b56358/1).
+> **SMS in the sample environment:** Instead of a real mobile number, SMS notifications are routed to a webhook. You can view them at [webhook.site](https://webhook.site/#!/view/bc82f64f-49aa-40af-8986-c7b572c87e7f/a1a50a01-9b3b-41ab-8df3-98eae3b56358/1) (If this is already expired then you have to add notification provider into thunder and thunder back-end apis already support this sms provider add/update features. [thunder doc reference](https://thunderid.dev/docs/next/guides/guides/notifications/sms-providers/))
 
 ---
 
